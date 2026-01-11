@@ -8,10 +8,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background:
-    radial-gradient(circle at 20% 30%, rgba(138,92,255,0.25), transparent 40%),
-    radial-gradient(circle at 80% 70%, rgba(51,214,255,0.2), transparent 45%),
-    radial-gradient(circle at center, #0b1020, #000);
+  background: black;
 }
 
 .hero::after {
@@ -57,7 +54,7 @@
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  border: 2px solid rgba(255,255,255,0.3);
+  border: 2px solid rgba(255, 255, 255, 0.595);
   pointer-events: none;
 }
 
@@ -129,9 +126,10 @@
 .name {
   margin-top: 40px;
   font-size: 3rem;
-  background: linear-gradient(90deg, #8a5cff, #33d6ff);
+  background: linear-gradient(90deg, #edbdee, #95ddee);
   -webkit-background-clip: text;
   color: transparent;
+  font-family: 'Source Code Pro', monospace;
 }
 
 .tagline {
@@ -140,7 +138,7 @@
 }
 
 .tagline span {
-  color: #8a5cff;
+  color: #ff7700;
 }
 
 
@@ -212,7 +210,7 @@
   min-height: 90vh;
   position: relative;
   background:
-    radial-gradient(circle at 25% 30%, rgb(0, 0, 0), transparent 40%),
+    radial-gradient(circle at 25% 30%, rgb(0, 0, 0), transparent 70%),
     radial-gradient(circle at 75% 65%, rgba(51,214,255,0.15), transparent 45%),
     linear-gradient(to bottom, #0b1020, #000);
   overflow: hidden;
@@ -339,7 +337,7 @@
   text-align: center;
   font-size: 2.6rem;
   margin-bottom: 70px;
-  background: linear-gradient(90deg, #c9bfe0, #33ffcc);
+  background: linear-gradient(90deg, #ffffff, #ffffff);
   -webkit-background-clip: text;
   color: transparent;
 }

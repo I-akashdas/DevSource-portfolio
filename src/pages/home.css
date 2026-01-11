@@ -1,0 +1,259 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: black;
+  color: white;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+.home {
+  min-height: 100vh;
+}
+
+.heroo {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.heroo h1 {
+  font-size: 4.2rem;
+  font-weight: 600;
+  font-family:'Courier New', Courier, monospace;
+}
+
+.heroo span {
+  color: #ff7a00;
+}
+
+.heroo p {
+  margin-top: 6px;
+  opacity: 0.6;
+  font-size: 0.95rem;
+}
+.hero-title {
+  margin-bottom: 14px;
+  transform: translateY(-20px); 
+}
+
+.hero-desc {
+  max-width: 720px;
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.6;
+}
+
+
+.team {
+  padding: 100px 0 140px;
+  text-align: center;
+}
+
+.team h2 {
+  font-size: 2.4rem;
+  font-weight: 500;
+  margin-bottom: 70px;
+  letter-spacing: 1px;
+  opacity: 0.85;
+  font-family:'Courier New', Courier, monospace;
+}
+
+.team-grid {
+  display: flex;
+  justify-content: center;
+  gap: 140px;
+}
+
+.card {
+  perspective: 1200px;
+  text-align: center;
+}
+
+.image-wrap {
+  position: relative;
+  width: 230px;
+  height: 230px;
+  margin: auto;
+}
+
+.image-wrap img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: relative;
+  z-index: 2;
+}
+
+.hex {
+  position: absolute;
+  inset: 0;
+  border: 5px solid rgba(255, 122, 0, 0.35);
+  clip-path: polygon(
+    25% 6%,
+    75% 6%,
+    100% 50%,
+    75% 94%,
+    25% 94%,
+    0% 50%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.hex.glow {
+  border-color: rgba(255, 122, 0, 0.9);
+  filter: drop-shadow(0 0 8px rgba(255, 122, 0, 0.45));
+}
+
+
+.card:hover .hex {
+  opacity: 1;
+}
+
+.role {
+  display: block;
+  margin-top: 22px;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  color: #ff7a00;
+}
+
+.card h3 {
+  margin-top: 6px;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.profile-btn {
+  display: inline-block;
+  margin-top: 14px;
+  background: transparent;
+  border: 1px solid #ff7a00;
+  color: #ff7a00;
+  padding: 7px 14px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.profile-btn:hover {
+  background: #ff7a00;
+  color: black;
+}
+
+.glitch {
+  position: relative;
+  font-size: 3.2rem;
+  font-weight: 600;
+  color: white;
+  letter-spacing: 0.5px;
+}
+
+.glitch .accent {
+  color: #ff7a00;
+}
+
+.glitch span[aria-hidden="true"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.glitch span:first-child {
+  color: #ff7a00;
+  transform: translate(-2px, 0);
+  animation: glitch-left 2.4s infinite linear alternate-reverse;
+}
+
+
+.glitch span:last-child {
+  color: white;
+  transform: translate(2px, 0);
+  animation: glitch-right 2s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-left {
+  0% { clip-path: inset(0 0 85% 0); }
+  20% { clip-path: inset(10% 0 60% 0); }
+  40% { clip-path: inset(40% 0 35% 0); }
+  60% { clip-path: inset(70% 0 10% 0); }
+  80% { clip-path: inset(25% 0 55% 0); }
+  100% { clip-path: inset(0 0 85% 0); }
+}
+
+@keyframes glitch-right {
+  0% { clip-path: inset(85% 0 0 0); }
+  20% { clip-path: inset(60% 0 10% 0); }
+  40% { clip-path: inset(35% 0 40% 0); }
+  60% { clip-path: inset(10% 0 70% 0); }
+  80% { clip-path: inset(55% 0 25% 0); }
+  100% { clip-path: inset(85% 0 0 0); }
+}
+
+.glitch:hover span {
+  animation-duration: 0.6s;
+}
+
+
+.members {
+  padding: 90px 0 140px;
+  text-align: center;
+}
+
+.members h3 {
+  font-size: 2.2rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+  opacity: 0.85;
+  font-family:'Courier New', Courier, monospace;
+}
+
+.members-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.member-btn {
+  padding: 10px 22px;
+  border: 1px solid rgba(255,122,0,0.5);
+  color: #ff7a00;
+  text-decoration: none;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.member-btn:hover {
+  background: #ff7a00;
+  color: black;
+}
+.accent {
+  color: #ff7a00;
+  font-weight: 500;
+}
+.universe-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: black;
+}
+
+.universe-bg svg {
+  width: 100%;
+  height: 100%;
+}

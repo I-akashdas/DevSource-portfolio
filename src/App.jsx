@@ -1,11 +1,16 @@
 import React from 'react';
-import Portfolio from './Portfolio';
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Khushi from "./pages/Khushi";
+import Nikhil from "./pages/Nikhil";
+
 
 function App() {
   return (
-    <div className="App w-full">
-      <Portfolio />
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/khushi" element={<Khushi />} />
+    </Routes>
   );
 }
 

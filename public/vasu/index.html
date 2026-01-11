@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width , initial-scale=1.0">
+        <title>Portfolio</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                font-family: 'Poppins', sans-serif;
+                box-sizing: border-box;
+            }
+            html{
+                scroll-behavior: smooth;
+            }
+            body{
+                background: black;
+                color: white;
+            }
+            #header{
+                width: 100%;
+                height: 100vh;
+                background-size: cover;
+                background-position: center;
+            }
+            .container{
+                padding: 10px 10%;
+            }
+            nav{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            nav ul li{
+                display: inline-block;
+                list-style: none;
+                margin: 10px 20px;
+            }
+            nav ul li a{
+                color: white;
+                text-decoration: none;
+                font-size: 18px;
+                position: relative;
+            }
+            nav ul li a::after{
+                content: '';
+                width: 0;
+                height: 3px;
+                background: #ff004f;
+                position: absolute;
+                left: 0;
+                bottom: -6px;
+                transition: 0.2s;
+            }
+            nav ul li a:hover::after{
+                width: 100%;
+            }
+            .header-text{
+                margin-top: 20%;
+                font-size: 30px;
+            }
+            .header-text h1{
+                font-size: 60px;
+                margin-top: 20px;
+            }
+            .header-text h1 span{
+                color: red;
+            }
+            #about{
+                padding: 80px 0;
+                color: #ababab;
+            }
+            .row{
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+            .about-col1{
+                flex-basis: 35%;
+            }
+            .about-col1 img{
+                width: 100%;
+                height: 350px;
+                border-radius: 15px;
+            }
+            .about-col2{
+                flex-basis: 60%;
+            }
+            .subtitle{
+                font-size: 60px;
+                font-weight: 600;
+                color: white;
+            }
+            .tab-titles{
+                display:flex;
+                margin: 20px 0px 40px;
+            }
+            .tab-links{
+                margin-right: 50px;
+                font-size: 18px;
+                font-weight: 500;
+                cursor: pointer;
+                position: relative;
+            }
+            .tab-links::after{
+                content: '';
+                width: 0;
+                height: 3px;
+                background: #ff004f;
+                position: absolute;
+                left: 0;
+                bottom: -8px;
+                transition: 0.2s;
+            }
+            .tab-links.active-link::after{
+                width: 50%;
+            }
+            .tab-contents ul li{
+                list-style: none;
+                margin: 10px 0;
+            }
+            .tab-contents ul li span{
+                color: lightblue;
+                font-size: 14px;
+            }
+            .tab-contents{
+                display: none;
+            }
+            .tab-contents.active-tab{
+                display: block;
+            }
+            #portfolio{
+                padding: 50px 0;
+            }
+            .work-list{
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                grid-gap: 40px;
+                margin-top: 50px;
+            }
+            .work{
+                border-radius: 10px;
+                position: relative;
+                overflow: hidden;
+            }
+            .work img{
+                width: 100%;
+                border-radius: 10px;
+                display: block;
+                transition: transform 0.5s;
+            }
+            .layer{
+                width: 100%;
+                height: 0;
+                background: linear-gradient(rgba(0,0,0,0.5), #ff004f);
+                border-radius: 10px;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                padding: 0 40px;
+                text-align: center;
+                font-size: 14px;
+                transition: height 0.5s;
+            }
+            .layer h3{
+                font-weight: 500;
+                margin-bottom: 20px;
+            }
+            .work:hover p{
+                transform: scale(1.1);
+            }
+            .work:hover .layer{
+                height: 100%;
+            }
+            .btn{
+                display: block;
+                margin: 50px auto;
+                width: fit-content;
+                border: 1px solid #ff004f;
+                padding: 14px 50px;
+                border-radius: 6px;
+                text-decoration: none;
+                color: white;
+                transition: background 0.5s;
+                background: black;
+            }
+            .btn:hover{
+                background: #ff004f;
+            }
+            .contact-left{
+                flex-basis: 35%;
+            }
+            .contact-left p span{
+                color: red;
+            }
+            .contact-right{
+                flex-basis: 60%;
+            }
+            .contact-left p{
+                margin-top: 30px;
+            }
+            .social-icons{
+                margin-top: 30px;
+            }
+            .social-icons img{
+                width: 100%;
+                height: 50px;
+            }
+            .social-icons a{
+                text-decoration: none;
+                font-size: 30px;
+                margin-right: 15px;
+                color: #ababab;
+                display: inline-block;
+                transition: transform 0.5s;
+            }
+            .social-icons a:hover{
+                color: #ff004f;
+                transform: translateY(-5px);
+            }
+            .contact-right form{
+                width: 100%;
+            }
+            form input, form textarea{
+                width: 100%;
+                border: 0;
+                outline: none;
+                background: #262626;
+                padding: 15px;
+                margin: 15px 0;
+                color: #fff;
+                font-size: 18px;
+                border-radius: 6px;
+            }
+            form .btn{
+                padding: 14px 60px;
+                font-size: 18px;
+                margin-top: 20px;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header">
+            <div class="container">
+                <nav>
+                    <ul>
+                        <li><a href="#header">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-text">
+                    <h1>Hello, I am <span>Vasu</span> Garg</h1>
+                </div>
+            </div>
+        </div>
+
+        <div id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="about-col1">
+                        <img src="images/usict.jpeg" alt="">
+                    </div>
+                    <div class="about-col2">
+                        <h1 class="subtitle">About Me</h1>
+                        <p>Hello! I am Vasu Garg, a 1st-year BTech student at University School Of Information Communication and Technology, GGSIPU. Currently, I am learning C language, DSA and web development. <br> Favourite sport- Cricket. <br> Favourite animal- Cats</p>
+                        <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                            <p class="tab-links onclick=" onclick="opentab('education')">Education</p>
+                        </div>
+                        <div class="tab-contents active-tab" id="skills">
+                            <ul>
+                                <li><span>Python</span><br>Basics</li>
+                                <li><span>C language</span><br>Basics</li>
+                                <li><span>Web Development</span><br>Beginner</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="education">
+                            <ul>
+                                <li><span>Amity International School, Noida</span><br>2011-2015</li>
+                                <li><span>Delhi Public School RK Puram</span><br>2015-2025</li>
+                                <li><span>University School of information Communication and Technology, GGSIPU</span><br>2025-Present</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="portfolio">
+            <div class="container">
+                <h1 class="subtitle">My work</h1>
+                <div class="work-list">
+                    <div class="work">
+                        <img src="images/todolist.png">
+                        <div class="layer">
+                            <h3>To-Do Application</h3>
+                            <p>Built a fully functional To-Do application where you can add tasks, edit them and delete them once the task is completed</p>
+                        </div>
+                    </div>
+                    <div class="work">
+                        <img src="images/weatherapp.png">
+                        <div class="layer">
+                            <h3>Weather Application</h3>
+                            <p>Built a fully functional Weather Application which when name of a city is entered, it shows the current temperature, wind speed, clouds percentage, max and min temperature, time of sunrise and sunset using API. The website also has a map which highlights the place that has been inputed.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="contact-left">
+                        <h1 class="subtitle">Contact Me</h1>
+                        <p><span>Email:</span> gargvasu2007@gmail.com</p>
+                        <div class="social-icons">
+                            <a href="https://www.linkedin.com/in/vasu-garg-170a15382/"><img src="images/linkedinlogo.jpg"></a>
+                        </div>
+                    </div>
+                    <div class="contact-right">
+                        <form>
+                            <input type="text" name="Name" placeholder="Your name" required>
+                            <input type="email" name="email" placeholder="Your Email" required>
+                            <textarea type="Message" rows="6" placeholder="Your message"></textarea>
+                            <button type="submit" class="btn">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            var tablinks = document.getElementsByClassName("tab-links");
+            var tabcontents = document.getElementsByClassName("tab-contents");
+            function opentab(tabname){
+                for(tablink of tablinks){
+                    tablink.classList.remove("active-link");
+                }
+                for(tabcontent of tabcontents){
+                    tabcontent.classList.remove("active-tab");
+                }
+                event.currentTarget.classList.add("active-link");
+                document.getElementById(tabname).classList.add("active-tab");
+            }
+        </script>
+    </body>
+</html>
