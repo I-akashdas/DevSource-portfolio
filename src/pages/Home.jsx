@@ -71,8 +71,8 @@ export default function Home() {
 
           <div className="members-buttons">
             <MemberButton name="Mohd. Sami" link="/Sami/index.html" />
-            <MemberButton name="Member Two" link="/team/member-two" />
-            <MemberButton name="Member Three" link="/team/member-three" />
+            <MemberButton name="Vasu Garg" link="/vasu/index.html" />
+            <MemberButton name="Nikhil" link="/nikhil" />
           </div>
         </motion.div>
       </section>
