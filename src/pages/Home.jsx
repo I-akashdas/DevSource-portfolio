@@ -38,7 +38,6 @@ export default function Home() {
          <span className="accent">contributions</span>.
         </motion.p>
 
-<<<<<<< HEAD
       </section>
 
       <section className="team">
@@ -78,19 +77,6 @@ export default function Home() {
           </div>
         </motion.div>
       </section>
-=======
-      {/* Buttons */}
-      <div style={styles.buttonGroup}>
-        <Button
-          text="Lead Portfolio"
-          onClick={() => navigate("/khushi")}
-        />
-        <Button
-          text="Himanshu Portfolio"
-          onClick={() => navigate("/Himanshu")}
-        />
-      </div>
->>>>>>> afae10b (Update dependencies, add Himanshu portfolio page, and integrate Tailwind CSS)
     </div>
   );
 }
