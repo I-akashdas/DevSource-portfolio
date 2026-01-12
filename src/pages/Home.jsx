@@ -56,7 +56,7 @@ export default function Home() {
             name="Krrish Khowal"
             role="VICE LEAD"
             img="/vice_lead.JPG"
-            link="/team/krrish-khowal"
+            link="https://www.linkedin.com/in/krrish-khowal-150885311/"
           />
         </div>
       </section>
