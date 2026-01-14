@@ -1,0 +1,20 @@
+
+
+.akash-page {
+    min-height: 100vh;
+    padding: 60px 20px;
+    background: radial-gradient(circle at top, #0f172a, #020617 70%);
+    color: white;
+}
+
+.akash-hero {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 90px;
+}
+
+.akash-hero-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

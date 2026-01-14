@@ -1,15 +1,19 @@
 import React from "react";
+import "./Akash.css";
+
 
 const Akash = () => {
   return (
-    <div style={page}>
+    <div className="akash-page">
+
       {/* Glow Background */}
       <div style={glowPurple}></div>
       <div style={glowBlue}></div>
 
       {/* HERO */}
-<section style={hero}>
-  <div style={heroInner}>
+<section className="akash-hero">
+  <div className="akash-hero-inner">
+
   <img src="/akash.jpg" alt="Akash Das" style={profileImage} />
 
 
