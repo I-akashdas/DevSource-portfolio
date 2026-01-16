@@ -82,6 +82,7 @@ export default function Home() {
             <MemberButton name="Vaibhav Kumar" link="https://vaibhavk-portfolio.netlify.app/" />
             <MemberButton name="Arnav Kumar Gupta" link="https://arnav-portfolio-chi.vercel.app/" />
             <MemberButton name="Mayank Sagar" link="https://my-portfolio-page-16.netlify.app/" />
+            <MemberButton name="Anshu Kumar" link="https://anshu-portfolio-sable.vercel.app/" />
           </div>
         </motion.div>
       </section>
