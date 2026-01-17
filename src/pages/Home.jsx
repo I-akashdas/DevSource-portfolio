@@ -77,6 +77,7 @@ export default function Home() {
             <MemberButton name="Vasu Garg" link="https://portfolio-vasug.netlify.app/" />
             <MemberButton name="Nikhil" link="/nikhil" />
             <MemberButton name="Jiya Agrawal" link="/jiya" />
+            <MemberButton name="Akash Das" link="/akash" />
             <MemberButton name="Vinit Tiwari" link="/Vinit" />
             <MemberButton name="Himanshu Singh" link="https://portfolio-gules-two-28.vercel.app/" />
             <MemberButton name="Vaibhav Kumar" link="https://vaibhavk-portfolio.netlify.app/" />
